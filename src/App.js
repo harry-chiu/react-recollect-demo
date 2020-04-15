@@ -1,26 +1,70 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import { collect } from 'react-recollect';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import Container from './components/Container';
+import Title from './components/Title';
+import Row from './components/Row';
+import Input from './components/Input';
+import Button from './components/Button';
+import List from './components/List';
+import ListItem from './components/ListItem';
+import Grid from './components/Grid';
 
-export default App;
+import {
+    addTask,
+    handleCompleted,
+    completeAll,
+} from './updaters';
+
+const App = ({ store }) => {
+    const [task, setTask] = useState('');
+    const [checked, setChecked] = useState(false);
+
+    const handleCompleteAll = () => {
+        completeAll(checked);
+
+        setChecked(!checked);
+    }
+
+    return (
+        <Container>
+            <Title>Recollect DEMO - Todolist</Title>
+            <Row>
+                <Input
+                    value={task}
+                    placeholder="Add new task..."
+                    onChange={(event) => setTask(event.target.value)}
+                />
+                <Button onClick={() => addTask(task)}>Add</Button>
+            </Row>
+            <List>
+                {store.tasks.length > 0 && (
+                    <ListItem>
+                        <Grid align="center" flex="unset">
+                            <input
+                                type="checkbox"
+                                checked={checked}
+                                onChange={handleCompleteAll}
+                            />
+                        </Grid>
+                        <Grid>Select All</Grid>
+                    </ListItem>
+                )}
+                {store.tasks.map((task, index) => (
+                    <ListItem key={index} completed={task.completed}>
+                        <Grid align="center" flex="unset">
+                            <input
+                                type="checkbox"
+                                checked={task.completed}
+                                onChange={() => handleCompleted(index)}
+                            />
+                        </Grid>
+                        <Grid>{task.text}</Grid>
+                    </ListItem>
+                ))}
+            </List>
+        </Container>
+    );
+};
+
+export default collect(App);
