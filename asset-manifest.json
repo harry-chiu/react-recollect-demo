@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/react-recollect-demo/static/css/main.b888f887.chunk.css",
+    "main.js": "/react-recollect-demo/static/js/main.dcb76234.chunk.js",
+    "main.js.map": "/react-recollect-demo/static/js/main.dcb76234.chunk.js.map",
+    "runtime-main.js": "/react-recollect-demo/static/js/runtime-main.68e50c9a.js",
+    "runtime-main.js.map": "/react-recollect-demo/static/js/runtime-main.68e50c9a.js.map",
+    "static/js/2.afc5164b.chunk.js": "/react-recollect-demo/static/js/2.afc5164b.chunk.js",
+    "static/js/2.afc5164b.chunk.js.map": "/react-recollect-demo/static/js/2.afc5164b.chunk.js.map",
+    "index.html": "/react-recollect-demo/index.html",
+    "precache-manifest.028283b8cfda55e823e33320b24ee528.js": "/react-recollect-demo/precache-manifest.028283b8cfda55e823e33320b24ee528.js",
+    "service-worker.js": "/react-recollect-demo/service-worker.js",
+    "static/css/main.b888f887.chunk.css.map": "/react-recollect-demo/static/css/main.b888f887.chunk.css.map",
+    "static/js/2.afc5164b.chunk.js.LICENSE.txt": "/react-recollect-demo/static/js/2.afc5164b.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.68e50c9a.js",
+    "static/js/2.afc5164b.chunk.js",
+    "static/css/main.b888f887.chunk.css",
+    "static/js/main.dcb76234.chunk.js"
+  ]
+}
